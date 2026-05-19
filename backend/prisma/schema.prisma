@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  password  String
+  role      String
+  region    String
+  createdAt DateTime  @default(now())
+  settings  Settings?
+}
+
+model Settings {
+  id                  Int     @id @default(autoincrement())
+  userId              Int     @unique
+  user                User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  emailAlerts         Boolean @default(true)
+  smsAlerts           Boolean @default(false)
+  autoEscalation      Boolean @default(true)
+  aiSensitivity       Int     @default(72)
+  pestThreshold       Int     @default(82)
+  rainfallThreshold   Int     @default(64)
+  firebaseProjectId   String  @default("krishimitra-ai-prod")
+  predictionApiEndpoint String @default("")
+  weatherProviderKey  String  @default("")
+}
+
+model Region {
+  id            Int      @id @default(autoincrement())
+  name          String
+  state         String
+  cropType      String
+  riskScore     Int
+  pestRiskLevel String   // "High", "Medium", "Low"
+  latitude      Float
+  longitude     Float
+  
+  // Cache of weather parameters
+  temp          Float?
+  humidity      Float?
+  windSpeed     Float?
+  rainfall      Float?
+  
+  recommendations Recommendation[]
+}
+
+model Recommendation {
+  id              Int      @id @default(autoincrement())
+  regionId        Int
+  region          Region   @relation(fields: [regionId], references: [id])
+  action          String   // e.g. "Apply Fungicide"
+  product         String   // e.g. "Amistar Top"
+  reason          String   // e.g. "High humidity (82%) and pest risk detected"
+  benefit         String   // e.g. "Reduce crop damage by 30-40%"
+  confidence      Int      // e.g. 85
+  priority        String   // "High", "Medium", "Low"
+  date            String   // e.g. "May 12, 2025"
+  isFeatured      Boolean  @default(false)
+}
+
+model PestTrend {
+  id         Int    @id @default(autoincrement())
+  date       String // e.g. "May 6"
+  highRisk   Int
+  mediumRisk Int
+  lowRisk    Int
+}
+
+model VisitSummary {
+  id                  Int @id @default(autoincrement())
+  totalVisits         Int
+  highPriorityRegions Int
+  alerts              Int
+  recommendations     Int
+}

@@ -1,0 +1,213 @@
+[
+  {
+    "retailer_id":"RTL_01228",
+    "territory_id":"TER_0154",
+    "state":"Punjab",
+    "district":"Bathinda",
+    "tehsil":"Bathinda_T056",
+    "lat":31.229501049,
+    "lng":75.4859229659,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.4325736793,
+    "visit_order":1,
+    "total_sales":946893.79,
+    "stockout_count":3,
+    "days_since_visit":56,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_03897",
+    "territory_id":"TER_0487",
+    "state":"Punjab",
+    "district":"Patiala",
+    "tehsil":"Patiala_T139",
+    "lat":31.6697611709,
+    "lng":74.0896095669,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.4364804678,
+    "visit_order":4,
+    "total_sales":1028427.33,
+    "stockout_count":6,
+    "days_since_visit":25,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_00428",
+    "territory_id":"TER_0055",
+    "state":"Punjab",
+    "district":"Bathinda",
+    "tehsil":"Bathinda_T016",
+    "lat":30.1451362568,
+    "lng":74.2940619327,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.4387592593,
+    "visit_order":5,
+    "total_sales":965601.47,
+    "stockout_count":5,
+    "days_since_visit":28,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit",
+      "High digital engagement in area"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_01716",
+    "territory_id":"TER_0216",
+    "state":"Punjab",
+    "district":"Ludhiana",
+    "tehsil":"Ludhiana_T057",
+    "lat":29.7893294867,
+    "lng":76.2736238296,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.4857860851,
+    "visit_order":6,
+    "total_sales":1191820.3799999999,
+    "stockout_count":7,
+    "days_since_visit":28,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_00418",
+    "territory_id":"TER_0054",
+    "state":"Madhya Pradesh",
+    "district":"Ujjain",
+    "tehsil":"Ujjain_T011",
+    "lat":26.6781256983,
+    "lng":80.3841508674,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.4486262102,
+    "visit_order":7,
+    "total_sales":1014539.91,
+    "stockout_count":5,
+    "days_since_visit":29,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_00636",
+    "territory_id":"TER_0081",
+    "state":"Maharashtra",
+    "district":"Akola",
+    "tehsil":"Akola_T031",
+    "lat":21.8795661137,
+    "lng":77.9207511901,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.5905888926,
+    "visit_order":9,
+    "total_sales":1428048.98,
+    "stockout_count":7,
+    "days_since_visit":50,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_03318",
+    "territory_id":"TER_0418",
+    "state":"Punjab",
+    "district":"Bathinda",
+    "tehsil":"Bathinda_T140",
+    "lat":31.779384563,
+    "lng":76.3989710744,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.3836085426,
+    "visit_order":2,
+    "total_sales":858548.86,
+    "stockout_count":6,
+    "days_since_visit":18,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_01679",
+    "territory_id":"TER_0212",
+    "state":"West Bengal",
+    "district":"Bardhaman",
+    "tehsil":"Bardhaman_T067",
+    "lat":23.3066810147,
+    "lng":79.3016030718,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.4536792287,
+    "visit_order":8,
+    "total_sales":1059748.49,
+    "stockout_count":7,
+    "days_since_visit":17,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_00332",
+    "territory_id":"TER_0044",
+    "state":"Madhya Pradesh",
+    "district":"Sehore",
+    "tehsil":"Sehore_T015",
+    "lat":22.6896589934,
+    "lng":76.1485899164,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.3406835321,
+    "visit_order":10,
+    "total_sales":764983.63,
+    "stockout_count":3,
+    "days_since_visit":45,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  },
+  {
+    "retailer_id":"RTL_01036",
+    "territory_id":"TER_0131",
+    "state":"Punjab",
+    "district":"Amritsar",
+    "tehsil":"Amritsar_T039",
+    "lat":32.0600377781,
+    "lng":74.6947561264,
+    "prediction_probability":0.9997636676,
+    "priority_score":0.4920647466,
+    "visit_order":3,
+    "total_sales":980753.86,
+    "stockout_count":9,
+    "days_since_visit":22,
+    "reasons":[
+      "High stockout frequency",
+      "Strong sales momentum",
+      "Overdue field visit"
+    ],
+    "estimated_total_route_km":2044.4
+  }
+]
