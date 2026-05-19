@@ -8,7 +8,7 @@ import prisma from "./db";
 dotenv.config({ quiet: true });
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = Number(process.env.PORT) || 5000;
 
 // Enable CORS so the React frontend and deployed clients can query this server
 app.use(
@@ -54,7 +54,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 // Start Server
-const server = app.listen(PORT as number, "0.0.0.0", () => {
+const server = app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
 
@@ -72,20 +72,14 @@ process.on("SIGINT", async () => {
   console.log("\nShutting down server gracefully...");
   await prisma.$disconnect();
   console.log("Disconnected from database.");
-  server.close(() => {
-    console.log("HTTP server closed.");
-    process.exit(0);
-  });
+  server.close(() => process.exit(0));
 });
 
 process.on("SIGTERM", async () => {
   console.log("\nShutting down server gracefully...");
   await prisma.$disconnect();
   console.log("Disconnected from database.");
-  server.close(() => {
-    console.log("HTTP server closed.");
-    process.exit(0);
-  });
+  server.close(() => process.exit(0));
 });
 
 export default app;
