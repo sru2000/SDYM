@@ -9,12 +9,12 @@ dotenv.config({ quiet: true });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const HOST = process.env.HOST || "127.0.0.1";
+const HOST = process.env.HOST || "0.0.0.0";
 
-// Enable CORS so the React frontend on localhost:3000/localhost:5173 can query this server
+// Enable CORS so the React frontend and deployed clients can query this server
 app.use(
   cors({
-    origin: "*", // Adjust to specific port like http://localhost:5173 for tighter security if needed
+    origin: "*", // Adjust to your deployed frontend origin for tighter security if needed
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -58,7 +58,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 const server = app.listen(Number(PORT), HOST, () => {
   console.log(`========================================`);
   console.log(`  KrishiMitra AI Backend running!`);
-  console.log(`  Local URL: http://${HOST}:${PORT}`);
+  console.log(`  Listening on: http://${HOST}:${PORT}`);
   console.log(`  CORS enabled for all origins`);
   console.log(`========================================`);
 });
