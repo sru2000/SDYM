@@ -8,8 +8,25 @@ import {
   activityLogs
 } from "../data/dashboardData.js";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+const DEFAULT_PRODUCTION_API_URL = "https://krishimitraai-main.onrender.com";
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL ||
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD ? DEFAULT_PRODUCTION_API_URL : "")
+).replace(/\/+$/, "");
 const AUTH_STORAGE_KEY = "km-auth";
+
+function buildApiUrl(path) {
+  if (!API_BASE_URL) {
+    return path;
+  }
+
+  if (API_BASE_URL.endsWith("/api") && path.startsWith("/api/")) {
+    return `${API_BASE_URL}${path.slice(4)}`;
+  }
+
+  return `${API_BASE_URL}${path}`;
+}
 
 function getStoredToken() {
   try {
@@ -24,7 +41,7 @@ function getStoredToken() {
 async function request(url, options = {}) {
   try {
     const token = getStoredToken();
-    const res = await fetch(`${API_BASE_URL}${url}`, {
+    const res = await fetch(buildApiUrl(url), {
       ...options,
       headers: {
         "Content-Type": "application/json",
